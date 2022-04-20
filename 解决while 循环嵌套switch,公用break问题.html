@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>while including switch(while 循环 套switch,公用break问题)</title>
+	<script type="text/javascript">
+	/*																														
+																																		
+订机票：黄花机场去美国的机票默认为4000元，但会随着月份等打折：																																		
+如果在旺季（5、6、7、8、9、10月）出行的话，如果选择头等舱，则机票打9折，																																		
+如果选择经济舱的话，机票打7.5折；如果在淡季出行的话，如果选择头等舱，则机票打6折，经济舱打3折；																																		
+请用户输入他要出行的月份，以及选择的是经济舱还是头等舱，然后显示出该顾客应付的机票价格
+	*/
+		var flag = true;
+
+		while(flag){
+			var month = prompt("请输入您想要出行的月份");
+			var choose;
+			const ticket = 4000;
+			console.log(month);
+
+			switch(month){
+				case "1":
+				case "2":
+				case "3":
+				case "4":
+				case "11":
+				case "12":
+				    choose = prompt("请选择 经济舱 或 头等舱 ");
+					if(choose == "经济舱"){
+						document.write("您好，" + month + "月份的" + choose + "价格为" + (ticket * 0.3) + "元");
+						flag = false;
+						break;
+					}else if(choose == "头等舱"){
+						document.write("您好，" + month + "月份的" + choose + "价格为" + (ticket * 0.6) + "元");
+						flag = false;
+						break;
+					}else if(choose == null){
+						alert("您已点击取消，欢迎下次再来");
+					 	flag = false;
+						break;
+					}else{
+						alert("输入错误，请重新输入！");
+						break;
+					}
+				case "5":
+				case "6":
+				case "7":
+				case "8":
+				case "9":
+				case "10":
+					choose = prompt("请选择 经济舱 或 头等舱 ");
+					if(choose == "经济舱"){
+						document.write("您好，" + month + "月份的" + choose + "价格为" + (ticket * 0.75) + "元");
+						flag = false;
+						break;
+					}else if(choose == "头等舱"){
+						document.write("您好，" + month + "月份的" + choose + "价格为" + (ticket * 0.9) + "元");
+						flag = false;
+						break;
+					}else if(choose == null){
+						alert("您已点击取消，欢迎下次再来");
+					 	flag = false;
+						break;
+					}else{
+						alert("输入错误，请重新输入！");
+						break;
+					}
+				case null:
+					alert("您已点击取消，欢迎下次再来");
+					flag = false;
+					break;	
+				default:
+					alert("输入错误，请重新输入！");
+					break;
+			}
+	    }
+	</script>
+</head>
+<body>
+
+</body>
+</html>
